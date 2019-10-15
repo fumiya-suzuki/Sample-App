@@ -81,9 +81,11 @@ header {
 }
 
 #header-list, a {
-  color: #fff;
   font-weight: bold;
+  color: white;
 }
+
+
 
 #header-list:hover {
   color: #808080;
@@ -140,3 +142,4 @@ header {
     color: $state-danger-text;
   }
 }
+

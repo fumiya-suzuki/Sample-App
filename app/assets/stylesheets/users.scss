@@ -22,3 +22,20 @@
 .btn-user--edit {
   margin-top: 10px;
 }
+
+/*ユーザー一覧ページ*/
+
+#table-users {
+  th {
+    background-color: white;
+  }
+  td {
+    vertical-align: middle;
+  }
+  a {
+    color: black;
+    font-weight: bold;
+  }
+}
+
+

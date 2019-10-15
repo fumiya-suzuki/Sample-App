@@ -6,7 +6,7 @@
         <li><%= link_to "Top", root_path, id: "header-list" %></li>
         <% if logged_in? %>
           <% if current_user.admin? %>
-          <li><%= link_to "Users", '#', id: "header-list" %></li>
+          <li><%= link_to "Users", users_path, id: "header-list" %></li>
           <% end %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
