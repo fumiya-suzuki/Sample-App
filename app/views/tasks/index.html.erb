@@ -1,9 +1,9 @@
-<h1><%= @current_user.id %>のタスク一覧</h1>
+<h1><%= @current_user.name %>のタスク一覧</h1>
   <div class="col-md-10 col-md-offset-1">
     <table class="table table-condensed table-hover" id="table-tasks">
       <% @tasks.each do |task| %>
         <tr>
-          <td><%= link_to task.name, task %></td>
+          <td><%= link_to task.name, '#' %></td>
         </tr>
       <% end %>
     </table>
