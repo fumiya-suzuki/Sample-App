@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+
+  
   def index
     @tasks = Task.all
   end
@@ -8,14 +10,14 @@ class TasksController < ApplicationController
   end
   
   def create
-    @user = User.find(session[:user_id])
     @task = Task.new(
       name: params[:name],
       note: params[:note],
-      user_id: @user.id,
+      user_id: @current_user.id,
       )
-    if @task.save
-      redirect_to tasks_index_url
+    if @task.save 
+      flash[:success] = "タスクを新規作成しました。"
+      redirect_to user_tasks_path
     else
       render :new
     end
@@ -27,8 +29,9 @@ class TasksController < ApplicationController
   
   private
   
+    
     def task_params
-      params.require(:task).permit(:name, :note)
+      params.require(:user).permit(tasks: [:name, :note])[:tasks]
     end
     
 end
