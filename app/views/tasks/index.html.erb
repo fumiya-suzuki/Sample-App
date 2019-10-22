@@ -3,7 +3,7 @@
     <table class="table table-condensed table-hover" id="table-tasks">
       <% @tasks.each do |task| %>
         <tr>
-          <td><%= link_to task.name, '#' %></td>
+          <td><%= link_to task.name, user_task_path(@current_user.id, task.id) %></td>
         </tr>
       <% end %>
     </table>

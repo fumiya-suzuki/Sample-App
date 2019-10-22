@@ -3,6 +3,7 @@ class TasksController < ApplicationController
   
   def index
     @tasks = Task.where(user_id: @current_user.id)
+
   end
   
   def new
@@ -27,6 +28,23 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
   
+  def edit
+    @task = Task.find(params[:id])
+  end
+  
+  def update
+    @task = Task.new(
+      name: params[:name],
+      note: params[:note],
+      user_id: @current_user.id
+      )
+    if @task.save
+      flash[:success] = "taskを更新しました。"
+      redirect_to user_tasks_path
+    else
+      render :new
+    end
+  end
   private
   
     
