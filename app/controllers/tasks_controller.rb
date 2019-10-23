@@ -33,11 +33,9 @@ class TasksController < ApplicationController
   end
   
   def update
-    @task = Task.new(
-      name: params[:name],
-      note: params[:note],
-      user_id: @current_user.id
-      )
+    @task = Task.find(params[:id])
+    @task.name = params[:name]
+    @task.note = params[:note]
     if @task.save
       flash[:success] = "taskを更新しました。"
       redirect_to user_tasks_path
