@@ -4,7 +4,10 @@
       <% @tasks.each do |task| %>
         <tr>
           <td><%= link_to task.name, user_task_path(@current_user.id, task.id) %></td>
-        </tr>
+          <td><%= task.created_at %></td>
+          <td><%= link_to "編集", edit_user_task_path(@current_user.id, task.id), class: "btn btn-success"%></td>
+          <td><%= link_to "削除", user_task_path(@current_user.id, task.id), method: :delete, class: "btn btn-success"%></td>        
+       </tr>
       <% end %>
     </table>
   </div>

@@ -2,14 +2,14 @@
   <div class="container">
     <h1 class="form-heading">task投稿</h1>
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-6 col-md-offset-3 new-form">
           <%= form_tag user_tasks_path do %>
             <p>name</p>
               <input type="text" name="name">
             <p>note</p>
               <textarea name="note"></textarea>
             <div>
-              <input type="submit" value="新規作成" class: "btn btn-primary btn-block btn-signup" >
+              <input type="submit" value="新規作成" class: "btn btn-signup" >
             </div>          
           <% end %>
         </div>

@@ -2,14 +2,15 @@
   <div class="container">
     <h1 class="form-heading">投稿編集</h1>
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-6 col-md-offset-3 edit-form">
           <%= form_tag(user_task_path ,method: :patch) do %>
             <p>name</p>
-              <input type="text" name="name" value = "<%= @task.name %>">
+              <input type="text" name="name" value = "<%= @task.name %>", class: "form-control">
             <p>note</p>
               <textarea name="note"><%= @task.note %></textarea>
             <div>
-              <input type="submit" value="更新" class: "btn btn-primary btn-block btn-edit" >
+              <input type="submit" value="更新" class: "btn btn-edit" >
+              <%= link_to "キャンセル", user_tasks_path(current_user), class: "btn-cansel" %>
             </div>          
           <% end %>
         </div>

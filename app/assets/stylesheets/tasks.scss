@@ -12,3 +12,42 @@ th {
     color: black;
   }
 }
+
+.edit-form, .new-form{
+p{
+  font-weight: bold;
+  font-size: 20px;
+}
+input, textarea {
+  font-size: 16px;
+  padding: 2px;
+  border-radius: 3px;
+  width: 100%;
+}
+textarea {
+  height: 100px;
+}
+}
+
+input[type="submit"], .btn-cansel {
+  background-color: #3ecdc6;
+  color: white;
+  cursor: pointer;
+  font-weight: 300;
+  width: 120px;
+  border-radius: 2px;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.btn-cansel {
+  display: inline-block;
+  padding: 5px 5px;
+  background-color: #808080;
+  text-align: center;
+}
+
+.btn-cansel:hover {
+  color: white;
+  text-decoration: none;
+}
