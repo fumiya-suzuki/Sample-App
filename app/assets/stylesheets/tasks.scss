@@ -11,9 +11,13 @@ th {
   a{
     color: black;
   }
+  .btn {
+    color: white;
+  }
+  
 }
 
-.edit-form, .new-form{
+.edit-task-form, .new-task-form{
 p{
   font-weight: bold;
   font-size: 20px;
@@ -27,10 +31,9 @@ input, textarea {
 textarea {
   height: 100px;
 }
-}
 
-input[type="submit"], .btn-cansel {
-  background-color: #3ecdc6;
+input[type="submit"] {
+  background-color: #00F;
   color: white;
   cursor: pointer;
   font-weight: 300;
@@ -40,11 +43,18 @@ input[type="submit"], .btn-cansel {
   margin-bottom: 0;
 }
 
+}
+
+
+
 .btn-cansel {
   display: inline-block;
   padding: 5px 5px;
   background-color: #808080;
   text-align: center;
+  width: 120px;
+  border-radius: 2px;
+  border: outset;
 }
 
 .btn-cansel:hover {

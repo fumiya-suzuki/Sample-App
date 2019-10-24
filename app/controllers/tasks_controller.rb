@@ -40,7 +40,7 @@ class TasksController < ApplicationController
       flash[:success] = "taskを更新しました。"
       redirect_to user_tasks_path
     else
-      render :new
+      render :edit
     end
   end
   
