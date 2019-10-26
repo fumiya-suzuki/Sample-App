@@ -1,7 +1,7 @@
 
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
-    <table class="table table-bordered">
+    <table class="table table-bordered task-show-table">
       <thead>
         <tr>
           <th><%= Task.human_attribute_name :id %></th>
@@ -13,7 +13,7 @@
         </tr>
         <tr>  
           <th><%= Task.human_attribute_name :note %></th>
-          <td><%= @task.note %></td>
+          <td><%= raw Rinku.auto_link(h(@task.note)) %></td>
         </tr>
         <tr>
           <th><%= User.human_attribute_name :created_at %></th>
