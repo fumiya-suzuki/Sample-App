@@ -2,6 +2,12 @@
   <div class="col-md-10 col-md-offset-1">
       <%= link_to "タスク新規作成", new_user_task_path(current_user), class: "btn btn-primary pull-right btn-destroy" %>
     <table class="table table-condensed table-hover" id="table-tasks">
+        <tr>
+          <th>名称</th>
+          <th>作成日</th>
+          <th></th>
+          <th></th>
+        </tr>
       <% @tasks.each do |task| %>
         <tr>
           <td><%= link_to task.name, user_task_path(@current_user.id, task.id) %></td>

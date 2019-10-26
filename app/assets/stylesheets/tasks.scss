@@ -67,3 +67,19 @@ input[type="submit"] {
   width: 200px;
   font-size: 20px;
 }
+
+
+/*タスク一覧ページ*/
+
+#table-tasks {
+  th {
+    background-color: white;
+  }
+  td {
+    vertical-align: middle;
+  }
+  a {
+    color: black;
+    font-weight: bold;
+  }
+}

@@ -7,9 +7,9 @@
             <% @task.errors.full_messages.each do |message| %>
               <div class="form-error"><%= message %></div>
             <% end %>    
-            <p>name</p>
+            <p>名称</p>
               <input type="text" name="name" value = "<%= @task.name %>", class: "form-control">
-            <p>note</p>
+            <p>詳細</p>
               <textarea name="note"><%= @task.note %></textarea>
             <div>
               <input type="submit" value="更新" class: "btn btn-task-edit" >
