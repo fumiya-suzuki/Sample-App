@@ -20,3 +20,24 @@ User.create!( name: "Guest User",
                password: password,
                password_confirmation: password)
 end
+
+50.times do |n|
+  name = "task-#{n+1}"
+  note = "auto-create-task"
+  user_id = 1
+  Task.create!(
+    name: name,
+    note: note,
+    user_id: user_id)
+end
+
+50.times do |n|
+  name = "task-#{n+1}"
+  note = "auto-create-task"
+  user_id = 2
+  Task.create!(
+    name: name,
+    note: note,
+    user_id: user_id)
+end
+
