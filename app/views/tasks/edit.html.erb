@@ -4,9 +4,14 @@
       <div class="row">
         <div class="col-md-6 col-md-offset-3 edit-task-form">
           <%= form_tag(user_task_path ,method: :patch) do %>
-            <% @task.errors.full_messages.each do |message| %>
-              <div class="form-error"><%= message %></div>
-            <% end %>    
+            <% if @task.errors.any? %>
+              <div class="alert alert-danger">
+                入力エラーが <%= @task.errors.count %>件ありました。
+              </div>
+              <% @task.errors.full_messages.each do |message| %>
+                <div class="form-error"><%= message %></div>
+              <% end %>    
+            <% end %>
             <p>名称</p>
               <input type="text" name="name" value = "<%= @task.name %>", class: "form-control">
             <p>詳細</p>

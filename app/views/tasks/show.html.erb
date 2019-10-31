@@ -13,7 +13,7 @@
         </tr>
         <tr>  
           <th><%= Task.human_attribute_name :note %></th>
-          <td><%= raw Rinku.auto_link(h(@task.note)) %></td>
+          <td><%= raw Rinku.auto_link(h(simple_format(@task.note))) %></td>
         </tr>
         <tr>
           <th><%= User.human_attribute_name :created_at %></th>

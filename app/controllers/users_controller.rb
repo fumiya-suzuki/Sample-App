@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
-  before_action :admin_user, only: :new
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :admin_user, only: :index
   before_action :logged_in_user, only: [:index, :show, :edit, :update]
   before_action :correct_user, only: [:edit, :update]
+  before_action :login_and_not_adimn_user, only: :new
   
   def index
     @users = User.paginate(page: params[:page], :per_page => 20)
@@ -36,6 +37,12 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+  
+  def destroy
+    @user.destroy
+    flash[:success] = "#{@user.name}のデータを削除しました。"
+    redirect_to users_path
   end
   
   private

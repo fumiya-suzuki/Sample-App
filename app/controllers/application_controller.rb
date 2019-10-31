@@ -20,7 +20,10 @@ class ApplicationController < ActionController::Base
     end
     
     def correct_user
-      redirect_to(root_url) unless current_user?(@user)
+      unless current_user?(@user)
+         redirect_to(root_url)
+         flash[:danger] = "ユーザが違います。"
+      end
     end
     
     def admin_user
@@ -29,4 +32,20 @@ class ApplicationController < ActionController::Base
       end
     end
     
+    def login_user
+      if logged_in?
+        redirect_to user_url(current_user)
+        flash[:danger] = "すでにログインしています。"
+      end
+    end
+    
+    def login_and_not_adimn_user
+      if logged_in? 
+        unless current_user.admin?
+          redirect_to user_url(current_user)
+          flash[:danger] = "すでにログインしています。"
+        end 
+      end
+    end
+
 end
