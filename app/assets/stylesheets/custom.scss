@@ -86,8 +86,6 @@ header {
   color: white;
 }
 
-
-
 #header-list:hover {
   color: #808080;
   background-color: #008080;
@@ -127,6 +125,7 @@ header {
   box-sizing:         border-box;
 }
 
+
 /* エラーメッセージ */
 
 #error_explanation {
@@ -146,4 +145,9 @@ header {
 
 .form-error {
   color: red;
+}
+
+#dropdown-title {
+    display: inline-block;
+    background-color: #008080;
 }
